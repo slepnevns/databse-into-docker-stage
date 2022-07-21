@@ -9,9 +9,9 @@ ARG POSTGRES_USER=dev
 ARG POSTGRES_PASSWORD=dev
 ARG POSTGRES_DB=dev
 
-# Some cross dependent processes like Symfony web server or
-# postgresql should be run in one common Docker layer
-# or separated by ampersand. 
+# Some cross dependent processes like env export,
+# postgresql or Symfony webserver must run inside
+# one Docker layer or separated by ampersand.
 RUN set -eux; \
     # Install Postgresql, configure server and database. \
     apk add postgresql; \
